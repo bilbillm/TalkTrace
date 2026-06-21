@@ -4,7 +4,7 @@
 
 A local workspace for organizing conversations, understanding relationship positions, and training a more natural way of speaking.
 
-![TalkTrace logo](assets/talktrace-logo.png)
+<img src="assets/talktrace-logo.png" alt="TalkTrace logo" width="160">
 
 If you often think, "I do not know how to chat," "I cannot tell what the other person wants," "replying feels exhausting," or "I want to sound more natural," this project is for you.
 
