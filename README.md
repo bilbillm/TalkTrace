@@ -4,7 +4,7 @@
 
 一个帮你整理聊天、看清关系位置、训练真实表达的本地工作区。
 
-![TalkTrace logo](assets/talktrace-logo.png)
+<img src="assets/talktrace-logo.png" alt="TalkTrace logo" width="160">
 
 如果你经常觉得“我是不是不会聊天”“我不知道对方到底怎么想”“回复别人好累”“我想变得自然一点”，这个项目是给你准备的。
 
