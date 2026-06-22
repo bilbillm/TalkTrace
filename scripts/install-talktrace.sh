@@ -15,7 +15,7 @@ fi
 
 mkdir -p "$destination"
 
-for item in AGENTS.md README.md README.en.md LICENSE .gitignore assets me people scripts; do
+for item in AGENTS.md CLAUDE.md README.md README.en.md LICENSE .gitignore .cursor assets examples me people scripts skills; do
   if [ ! -e "$source_root/$item" ]; then
     echo "Missing required template item: $item" >&2
     exit 1

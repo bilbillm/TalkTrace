@@ -83,14 +83,18 @@ if (Test-Path -LiteralPath $destinationRoot) {
 
 $items = @(
     "AGENTS.md",
+    "CLAUDE.md",
     "README.md",
     "README.en.md",
     "LICENSE",
     ".gitignore",
+    ".cursor",
     "assets",
+    "examples",
     "me",
     "people",
-    "scripts"
+    "scripts",
+    "skills"
 )
 
 foreach ($item in $items) {

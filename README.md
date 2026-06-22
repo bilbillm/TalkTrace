@@ -6,6 +6,8 @@
 
 <img src="assets/talktrace-logo.png" alt="TalkTrace logo" width="160">
 
+一句话：TalkTrace 是给本地 AI Agent 用的私人聊天关系记忆系统，不是代聊模板库。
+
 ## 安装
 
 复制这个网页的网址粘贴给你电脑上的 LLM / AI / Agent，然后说：
@@ -42,6 +44,33 @@ bash "$repo/scripts/install-talktrace.sh" "$HOME/TalkTrace-workspace"
 ```
 
 安装完成后，进入工作区并让 agent 读 `START_HERE.md` 和 `AGENTS.md`。
+
+## 30 秒看效果
+
+```text
+对象：小A
+关系：普通朋友，最近想拉近一点
+对方：最近真的好累，什么都不想干
+我的感觉：想安慰，但怕太用力
+```
+
+TalkTrace 会输出类似：
+
+```text
+我判断：这更像求接住，不一定是在求解决方案。
+
+别这样回：直接讲道理、逼对方振作、过度心疼。
+
+可以发：
+1. 稳妥版：“听起来是累到连处理事情的力气都没了。今天先别逼自己了。”
+   效果：接住情绪，不越界。
+2. 拉近版：“那你先瘫一会儿，我在。想说就丢给我，不想说也没事。”
+   效果：给陪伴感，但不逼问。
+3. 收尾版：“先躺着吧，今天不用强撑。”
+   效果：短、稳、不会增加负担。
+```
+
+更多虚构场景见 `examples/fictional-cases.md`。
 
 如果你经常觉得“我是不是不会聊天”“我不知道对方到底怎么想”“回复别人好累”“我想变得自然一点”，这个项目是给你准备的。
 
@@ -87,16 +116,27 @@ TalkTrace 使用“总画像 + 对象隔离”的结构。
 
 ```text
 .
+├── .cursor/
+│   └── rules/
+│       └── talktrace.md
 ├── AGENTS.md
+├── CLAUDE.md
 ├── README.md
 ├── README.en.md
 ├── assets/
 │   └── talktrace-logo.png
+├── examples/
+│   └── fictional-cases.md
 ├── scripts/
 │   ├── install-talktrace.ps1
 │   ├── install-talktrace.sh
 │   ├── new-person.ps1
 │   └── new-person.sh
+├── skills/
+│   └── talktrace/
+│       ├── SKILL.md
+│       └── agents/
+│           └── openai.yaml
 ├── me/
 │   ├── profile.md
 │   ├── style.md
@@ -115,10 +155,11 @@ TalkTrace 使用“总画像 + 对象隔离”的结构。
 
 1. 用上面的安装命令生成一个本地私用工作区，或者从这个模板创建你自己的私有仓库。
 2. 保持真实使用仓库为私有仓库或纯本地目录。
-3. 用 `scripts/new-person.ps1 -Alias <对象代号>` 复制 `people/_template/` 为 `people/<对象代号>/`，对象代号不要用真实姓名。
-4. 把新的聊天记录、你的第一感受、你想要的关系方向发给助手。
-5. 让助手读取 `me/` 和对应对象的 `people/<对象代号>/`，再生成回复建议。
-6. 你选择或修改一条回复；收到反馈后，让助手更新对应对象的 `cases.md`，必要时更新 `profile.md`、`style.md` 或 `unconscious.md`。
+3. 在支持 skills 的 agent 里，可以让它使用 `skills/talktrace/SKILL.md` 进入 TalkTrace 工作流；Claude Code 和 Cursor 也有对应入口文件。
+4. 用 `scripts/new-person.ps1 -Alias <对象代号>` 复制 `people/_template/` 为 `people/<对象代号>/`，对象代号不要用真实姓名。
+5. 把新的聊天记录、你的第一感受、你想要的关系方向发给助手。
+6. 让助手读取 `me/` 和对应对象的 `people/<对象代号>/`，再生成回复建议。
+7. 你选择或修改一条回复；收到反馈后，让助手更新对应对象的 `cases.md`，必要时更新 `profile.md`、`style.md` 或 `unconscious.md`。
 
 ## 一个虚构例子
 

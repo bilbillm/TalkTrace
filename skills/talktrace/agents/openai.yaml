@@ -1,0 +1,4 @@
+interface:
+  display_name: "TalkTrace"
+  short_description: "Local chat memory and reply workflow"
+  default_prompt: "Use $talktrace to analyze this chat and draft replies that sound like me."
